@@ -2,13 +2,12 @@ package com.baejimeel.rest.webservices.restfulwebservices.helloworld;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+//@RestController
 public class HelloWorldController {
 
 	@GetMapping(path = "/basicauth")
-	public String baesicAuthCheck() {
+	public String basicAuthCheck() {
 		return "success";
 	}
 
@@ -22,8 +21,8 @@ public class HelloWorldController {
 		return new HelloWorldBean("Hello World Bean");
 	}
 	
-	@GetMapping(path = "/hello-world/path-variable/{name}")
-	public HelloWorldBean helloWorldPathVariable(@PathVariable String name) {
-		return new HelloWorldBean(String.format("Hello World, %s", name)); 
+	@GetMapping(path = "/hello-world/path-variable/{username}")
+	public HelloWorldBean helloWorldPathVariable(@PathVariable String username) {
+		return new HelloWorldBean(String.format("Hello World, %s", username));
 	}	
 }
